@@ -14,6 +14,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
+import { Handbag } from "lucide-vue-next";
 </script>
 
 <template>
@@ -34,6 +35,9 @@ import { Separator } from "@/components/ui/separator";
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
+        <div class="ml-auto flex items-center">
+          <Handbag class="size-6 text-muted-foreground" />
+        </div>
       </header>
       <main class="flex flex-1 flex-col gap-4 p-4">
         <slot />

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import TeamSwitcher from "@/components/TeamSwitcher.vue";
 import NavMain from "@/components/NavMain.vue";
 import NavProjects from "@/components/NavProjects.vue";
 import NavUser from "@/components/NavUser.vue";
@@ -11,87 +10,83 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 import {
-  GalleryVerticalEnd,
-  AudioWaveform,
-  Command,
-  Frame,
-  PieChart,
-  Map,
+  Cake,
+  Info,
+  Pin,
+  Phone,
+  CakeSlice,
+  GlassWater,
+  IceCreamBowl,
 } from "lucide-vue-next";
 
 const props = withDefaults(defineProps(), {
   collapsible: "icon",
 });
 
-// Dados de exemplo
 const data = {
+  title: {
+    name: "Sweet Orders",
+    icon: Cake,
+  },
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "Matheus Alberto",
+    email: "mathalber@outlook.com",
     avatar: "/avatars/shadcn.jpg",
   },
-  teams: [
-    { name: "Acme Inc", logo: GalleryVerticalEnd, plan: "Enterprise" },
-    { name: "Acme Corp.", logo: AudioWaveform, plan: "Startup" },
-    { name: "Evil Corp.", logo: Command, plan: "Free" },
-  ],
   navMain: [
     {
-      title: "Playground",
+      title: "Doces",
       url: "#",
       isActive: true,
+      icon: CakeSlice,
       items: [
-        { title: "History", url: "#" },
-        { title: "Starred", url: "#" },
-        { title: "Settings", url: "#" },
+        { title: "Cookies", url: "#" },
+        { title: "Bolos", url: "#" },
+        { title: "Docinhos", url: "#" },
       ],
     },
     {
-      title: "Models",
+      title: "Bebidas",
       url: "#",
+      isActive: true,
+      icon: GlassWater,
       items: [
-        { title: "Genesis", url: "#" },
-        { title: "Explorer", url: "#" },
-        { title: "Quantum", url: "#" },
+        { title: "Refrigerantes", url: "#" },
+        { title: "Sucos", url: "#" },
+        { title: "Quentes", url: "#" },
       ],
     },
     {
-      title: "Documentation",
+      title: "Sobremesas",
       url: "#",
+      icon: IceCreamBowl,
       items: [
-        { title: "Introduction", url: "#" },
-        { title: "Get Started", url: "#" },
-        { title: "Tutorials", url: "#" },
-        { title: "Changelog", url: "#" },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      items: [
-        { title: "General", url: "#" },
-        { title: "Team", url: "#" },
-        { title: "Billing", url: "#" },
-        { title: "Limits", url: "#" },
+        { title: "Sorvetes", url: "#" },
+        { title: "Tortas", url: "#" },
       ],
     },
   ],
-  projects: [
-    { name: "Design Engineering", url: "#", icon: Frame },
-    { name: "Sales & Marketing", url: "#", icon: PieChart },
-    { name: "Travel", url: "#", icon: Map },
+  informações: [
+    { name: "Localizão", url: "#", icon: Pin },
+    { name: "Contato", url: "#", icon: Phone },
+    { name: "Sobre nós", url: "#", icon: Info },
   ],
 };
 </script>
 
 <template>
   <Sidebar v-bind="props">
-    <SidebarHeader>
-      <TeamSwitcher :teams="data.teams" />
-    </SidebarHeader>
+    <div>
+      <SidebarHeader>
+        <span class="flex items-center gap-2 w-full h-full p-2">
+          <component :is="data.title.icon" class="size-5 text-primary" />
+          {{ data.title.name }}
+        </span>
+      </SidebarHeader>
+    </div>
     <SidebarContent>
       <NavMain :items="data.navMain" />
-      <NavProjects :projects="data.projects" />
+      <NavProjects :projects="data.informações" />
     </SidebarContent>
     <SidebarFooter>
       <NavUser :user="data.user" />
