@@ -22,7 +22,9 @@ const { breadcrumbs } = useBreadcrumbs();
   <SidebarProvider>
     <AppSidebar />
     <SidebarInset>
-      <header class="flex h-16 items-center gap-2 border-b px-4">
+      <header
+        class="flex h-16 items-center gap-2 border-b px-4 relative z-40 bg-background"
+      >
         <SidebarTrigger class="-ml-1" />
         <Separator orientation="vertical" class="mr-2 h-4" />
         <Breadcrumb>
@@ -44,11 +46,11 @@ const { breadcrumbs } = useBreadcrumbs();
             </template>
           </BreadcrumbList>
         </Breadcrumb>
-        <div class="ml-auto flex items-center">
+        <div class="ml-auto flex items-center relative z-50">
           <NuxtLink to="/Sacola">
             <Handbag class="size-6 text-muted-foreground mr-2 cursor-pointer" />
           </NuxtLink>
-          <ThemeToggle class="mr-4" />
+          <ThemeToggle class="mr-4 relative z-50" />
         </div>
       </header>
       <main class="flex flex-1 flex-col gap-4 p-4">
