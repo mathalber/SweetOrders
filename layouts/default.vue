@@ -8,13 +8,19 @@ import {
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
 import { Handbag } from "lucide-vue-next";
+import ThemeToggle from "@/components/ThemeToggle.vue";
+import { useRoute } from "vue-router";
+const route = useRoute();
+const pageNames: Record<string, string> = {
+  "/": "Home",
+  "/Home": "Home",
+};
+const currentPage = pageNames[route.path] || "Página";
 </script>
 
 <template>
@@ -26,17 +32,14 @@ import { Handbag } from "lucide-vue-next";
         <Separator orientation="vertical" class="mr-2 h-4" />
         <Breadcrumb>
           <BreadcrumbList>
-            <BreadcrumbItem class="hidden md:block">
-              <BreadcrumbLink href="#">Home</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator class="hidden md:block" />
             <BreadcrumbItem>
-              <BreadcrumbPage>Página Atual</BreadcrumbPage>
+              <BreadcrumbPage>{{ currentPage }}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
         <div class="ml-auto flex items-center">
-          <Handbag class="size-6 text-muted-foreground" />
+          <Handbag class="size-6 text-muted-foreground mr-2" />
+          <ThemeToggle class="mr-4" />
         </div>
       </header>
       <main class="flex flex-1 flex-col gap-4 p-4">
