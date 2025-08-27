@@ -28,6 +28,10 @@ defineProps<{
     }[];
   }[];
 }>();
+
+const handleItemClick = (url: string) => {
+  navigateTo(url);
+};
 </script>
 
 <template>
@@ -42,7 +46,10 @@ defineProps<{
       >
         <SidebarMenuItem>
           <CollapsibleTrigger as-child>
-            <SidebarMenuButton :tooltip="item.title">
+            <SidebarMenuButton
+              :tooltip="item.title"
+              @click="handleItemClick(item.url)"
+            >
               <component :is="item.icon" v-if="item.icon" />
               <span>{{ item.title }}</span>
               <ChevronRight

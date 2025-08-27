@@ -34,40 +34,41 @@ const data = {
   navMain: [
     {
       title: "Doces",
-      url: "#",
+      url: "/Doces",
       isActive: true,
       icon: CakeSlice,
       items: [
-        { title: "Cookies", url: "#" },
-        { title: "Bolos", url: "#" },
-        { title: "Docinhos", url: "#" },
+        { title: "Cookies", url: "/Doces/Cookies" },
+        { title: "Bolos", url: "/Doces/Bolos" },
+        { title: "Docinhos", url: "/Doces/Docinhos" },
       ],
     },
     {
       title: "Bebidas",
-      url: "#",
+      url: "/Bebidas",
       isActive: true,
       icon: GlassWater,
       items: [
-        { title: "Refrigerantes", url: "#" },
-        { title: "Sucos", url: "#" },
-        { title: "Quentes", url: "#" },
+        { title: "Refrigerantes", url: "/Bebidas/Refrigerantes" },
+        { title: "Sucos", url: "/Bebidas/Sucos" },
+        { title: "Quentes", url: "/Bebidas/Quentes" },
       ],
     },
     {
       title: "Sobremesas",
-      url: "#",
+      url: "/Sobremesas",
       icon: IceCreamBowl,
+      isActive: true,
       items: [
-        { title: "Sorvetes", url: "#" },
-        { title: "Tortas", url: "#" },
+        { title: "Sorvetes", url: "/Sobremesas/Sorvetes" },
+        { title: "Tortas", url: "/Sobremesas/Tortas" },
       ],
     },
   ],
   informações: [
-    { name: "Localizão", url: "#", icon: Pin },
-    { name: "Contato", url: "#", icon: Phone },
-    { name: "Sobre nós", url: "#", icon: Info },
+    { name: "Localizacão", url: "/Informacoes/Localizacao", icon: Pin },
+    { name: "Contato", url: "/Informacoes/Contato", icon: Phone },
+    { name: "Sobre nós", url: "/Informacoes/SobreNos", icon: Info },
   ],
 };
 </script>

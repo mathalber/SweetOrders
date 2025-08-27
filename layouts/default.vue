@@ -14,13 +14,8 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Handbag } from "lucide-vue-next";
 import ThemeToggle from "@/components/ThemeToggle.vue";
-import { useRoute } from "vue-router";
-const route = useRoute();
-const pageNames: Record<string, string> = {
-  "/": "Home",
-  "/Home": "Home",
-};
-const currentPage = pageNames[route.path] || "Página";
+
+const { breadcrumbs } = useBreadcrumbs();
 </script>
 
 <template>
@@ -32,13 +27,27 @@ const currentPage = pageNames[route.path] || "Página";
         <Separator orientation="vertical" class="mr-2 h-4" />
         <Breadcrumb>
           <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbPage>{{ currentPage }}</BreadcrumbPage>
-            </BreadcrumbItem>
+            <template v-for="(crumb, idx) in breadcrumbs" :key="crumb.to">
+              <BreadcrumbItem>
+                <template v-if="!crumb.isLast">
+                  <NuxtLink :to="crumb.to" class="text-primary hover:underline">
+                    {{ crumb.name }}
+                  </NuxtLink>
+                </template>
+                <template v-else>
+                  <BreadcrumbPage>{{ crumb.name }}</BreadcrumbPage>
+                </template>
+              </BreadcrumbItem>
+              <template v-if="!crumb.isLast">
+                <span class="mx-2 text-muted-foreground">&gt;</span>
+              </template>
+            </template>
           </BreadcrumbList>
         </Breadcrumb>
         <div class="ml-auto flex items-center">
-          <Handbag class="size-6 text-muted-foreground mr-2" />
+          <NuxtLink to="/Sacola">
+            <Handbag class="size-6 text-muted-foreground mr-2 cursor-pointer" />
+          </NuxtLink>
           <ThemeToggle class="mr-4" />
         </div>
       </header>
