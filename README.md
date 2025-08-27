@@ -1,75 +1,112 @@
-# Nuxt Minimal Starter
+# Sweet Orders 🍰
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Projeto completo de vitrine digital para doceria, desenvolvido com foco em experiência do usuário, responsividade e design moderno.
 
-## Setup
+---
 
-Make sure to install dependencies:
+## Sobre o projeto
+
+Sweet Orders é uma aplicação web para apresentação de produtos de uma doceria, com navegação intuitiva, tema escuro/claro, breadcrumbs dinâmicos, menu mobile, skeleton loading e organização por categorias (doces, bebidas, sobremesas, informações).
+
+---
+
+## Tecnologias utilizadas
+
+- **Nuxt.js 3** (Vue 3)
+- **TailwindCSS**
+- **@nuxtjs/color-mode** (tema escuro/claro)
+- **Lucide Vue** (ícones)
+- **File-based Routing**
+- **Composables Vue** (breadcrumbs dinâmicos)
+- **Skeleton Loading**
+- **Componentização total**
+
+---
+
+## Prints das telas
+
+**Home**
+
+![Home Desktop](assets/img/HomeDesktop.png)
+
+**Menu mobile**
+
+![Menu Mobile](assets/img/MenuMobile.png)
+
+**Tema escuro/claro**
+
+![Theme Dark](assets/img/ThemeDark.png)
+![Theme Light](assets/img/ThemeLight.png)
+
+**Página de mobile**
+
+![Page Products Mobile](assets/img/PageProductsMobile.png)
+
+**Breadcrumbs**
+
+![Breadcrumbs](assets/img/Breadcrumbs.png)
+
+**Skeleton loading**
+
+## ![Skeleton](assets/img/Skeleton.png)
+
+## Instalação e uso
+
+Instale as dependências:
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Inicie o servidor de desenvolvimento:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
+Build para produção:
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Preview do build local:
 
 ```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+---
+
+## Estrutura de pastas
+
+```
+components/
+  AppSidebar.vue
+  ThemeToggle.vue
+  ...
+pages/
+  index.vue
+  Doces/
+  Bebidas/
+  Sobremesas/
+  Informacoes/
+layouts/
+  default.vue
+assets/
+  css/
+public/
+  ...
+```
+
+---
+
+## Deploy
+
+Veja a [documentação de deploy do Nuxt](https://nuxt.com/docs/getting-started/deployment) para publicar em produção.
+
+---
+
+## Autor
+
+Matheus Alberto Rodrigues da Silva
