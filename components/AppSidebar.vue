@@ -77,10 +77,13 @@ const data = {
   <Sidebar v-bind="props">
     <div>
       <SidebarHeader>
-        <span class="flex items-center gap-2 w-full h-full p-2">
+        <NuxtLink
+          to="/"
+          class="flex items-center gap-2 w-full h-full p-2 hover:underline"
+        >
           <component :is="data.title.icon" class="size-5 text-primary" />
           {{ data.title.name }}
-        </span>
+        </NuxtLink>
       </SidebarHeader>
     </div>
     <SidebarContent>
