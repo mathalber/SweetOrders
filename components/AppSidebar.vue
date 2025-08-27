@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import NavMain from "@/components/NavMain.vue";
-import NavProjects from "@/components/NavProjects.vue";
-import NavUser from "@/components/NavUser.vue";
+import { NavMain, NavProjects, NavUser } from "~/components/Navebar";
 import {
   Sidebar,
   SidebarContent,
